@@ -1,0 +1,5 @@
+@import "halo-ext";
+
+@mixin it_myefm_accesscontrolscheduler {
+  @include it_myefm_accesscontrolscheduler-halo-ext;
+}

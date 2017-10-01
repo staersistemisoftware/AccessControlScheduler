@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="it.myefm.accesscontrolscheduler.web.tracciatobadgerlsostitutivi.TracciatoBadgeRLSostitutiviBrowse"
+        focusComponent="tracciatoBadgeRLSostitutivisTable"
+        lookupComponent="tracciatoBadgeRLSostitutivisTable"
+        messagesPack="it.myefm.accesscontrolscheduler.web.tracciatobadgerlsostitutivi">
+    <dsContext>
+        <groupDatasource id="tracciatoBadgeRLSostitutivisDs"
+                         class="it.myefm.accesscontrolscheduler.entity.TracciatoBadgeRLSostitutivi"
+                         view="_local">
+            <query>
+                <![CDATA[select e from accesscontrolscheduler$TracciatoBadgeRLSostitutivi e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="tracciatoBadgeRLSostitutivisTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="tracciatoBadgeRLSostitutivisTable"
+                datasource="tracciatoBadgeRLSostitutivisDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="tracciatoBadgeRLSostitutivisTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="serialNumberBadgeRL"/>
+                <column id="tipologiaTesseraBadgeRL"/>
+                <column id="descrizioneTipologiaBadge"/>
+                <column id="timeStamp"/>
+            </columns>
+            <rows datasource="tracciatoBadgeRLSostitutivisDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="tracciatoBadgeRLSostitutivisTable.create"/>
+                <button id="editBtn"
+                        action="tracciatoBadgeRLSostitutivisTable.edit"/>
+                <button id="removeBtn"
+                        action="tracciatoBadgeRLSostitutivisTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,11 @@
+@import "halo-defaults";
+@import "it.myefm.accesscontrolscheduler/halo-ext-defaults";
+@import "app-components";
+@import "it.myefm.accesscontrolscheduler/halo-ext";
+
+.halo {
+  // include auto-generated app components SCSS
+  @include app_components;
+  
+  @include it_myefm_accesscontrolscheduler-halo-ext;
+}
